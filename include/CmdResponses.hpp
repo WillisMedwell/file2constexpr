@@ -2,7 +2,6 @@
 #include <iostream>
 #include <algorithm>
 
-
 namespace CmdResponses
 {
 	const std::string default_name = {"output.h"};

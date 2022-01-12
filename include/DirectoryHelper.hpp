@@ -6,7 +6,6 @@
 #include <iostream>
 #include <ranges>
 
-
 class DirectoryHelper
 {
 private: // variables
