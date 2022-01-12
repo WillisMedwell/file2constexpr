@@ -1,22 +1,22 @@
 # file2constexpr
-Convert files into header implemented constexpr arrays.\n
+Convert files into header implemented constexpr arrays.\
 NOTE: constexpr std::string is not currently supported by the STL, so strings are const instead.
 
 ## How to use
-Call "file2constexpr" within the project directory.\n
-Or\n
-Use it like cmake, where you call within the build folder"\build\file2constexpr .."\n
+Call "file2constexpr" within the project directory.\
+Or\
+Use it like cmake, where you call within the build folder "\build\file2constexpr .."
 
 ## How it works
-Reads all the files from "src\constexpr\".\n
+Reads all the files from "src\constexpr\".
 These are implemented as constexpr std::array<type> in a header file (default output = \include\output.h)
 
 ## Commands
---help\n
---name()\n
---inDir()\n
---outDir()\n
-..\n
+--help\
+--name()\
+--inDir()\
+--outDir()\
+..\
 Call them after "file2constexpr" the order doesn't matter
 
 ## Goals
