@@ -9,7 +9,7 @@ Or\
 Use it like cmake, where you call within the build folder "\build\file2constexpr .."
 
 ## How it works
-Reads all the files from "src\constexpr\".
+Reads all the files from "src\constexpr\".\
 These are implemented as constexpr std::array<type> in a header file (default output = \include\output.h)
 
 ## Commands
