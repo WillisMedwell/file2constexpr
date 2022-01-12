@@ -1,6 +1,6 @@
 # file2constexpr
 Convert files into header implemented constexpr arrays.\
-Background: growing interest into compile time execution, but larger data sets are too hard to type manually into a file: this is a quick exploration.
+Background: growing interest into compile time execution, but larger data sets are too hard to type manually into a file: this is a quick exploration.\
 NOTE: constexpr std::string is not currently supported by the STL, so strings are const instead.
 
 ## How to use
