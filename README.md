@@ -1,5 +1,6 @@
 # file2constexpr
 Convert files into header implemented constexpr arrays.\
+Background: growing interest into compile time execution, but larger data sets are too hard to type manually into a file: this is a quick exploration.
 NOTE: constexpr std::string is not currently supported by the STL, so strings are const instead.
 
 ## How to use
@@ -23,5 +24,5 @@ Call them after "file2constexpr" the order doesn't matter
 Want to be able to store a variety of formats such as images, binaries, and more!
 
 # Developments
-##version 0.1
+## version 0.1
 Able to convert simple int, float, string, and bool files.
