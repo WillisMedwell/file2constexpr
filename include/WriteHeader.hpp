@@ -47,32 +47,46 @@ public:
 		m_file << dataType << ", " << data.size();
 		m_file << "> " << varName <<" = {\n";
 
-		auto StringNotLast = [&](auto& element) {
+		auto LineInsert_QuoteComma = [&](auto& element) {
 			m_file << "\t\"" << element << "\",\n";
 		};
-		auto StringLast = [&](auto& element) {
+		auto LineInsert_Quote = [&](auto& element) {
 			m_file << "\t\"" << element << "\"\n";
 		};
-		auto NotLast = [&](auto& element) {
+		auto LineInsert_Comma = [&](auto& element) {
 			m_file << "\t" << element << ",\n";
 		};
-		auto Last = [&](auto& element) {
+		auto LineInsert_NoFormat = [&](auto& element) {
 			m_file << "\t" << element << "\n";
 		};
 
 		if (dataType == "std::string") [[unlikely]]
 		{
 			for (size_t i = 0; i < data.size()-1; i++) {
-				StringNotLast(data[i]);
+				LineInsert_QuoteComma(data[i]);
 			}
-			StringLast(data[data.size() - 1]);
+			LineInsert_Quote(data[data.size() - 1]);
+		}
+		else if (dataType == "bool")
+		{
+			for (size_t i = 0; i < data.size() - 1; i++) {
+				for (auto& bool_value : data[i])
+				{
+					LineInsert_Comma(bool_value);
+				}
+			}
+			for (size_t i = 0; i < data[data.size() - 1].size() - 1; i++)
+			{
+				LineInsert_Comma(data[data.size() - 1][i]);
+			}
+			LineInsert_NoFormat(data[data.size() - 1][data[data.size() - 1].size() - 1]);
 		}
 		else [[likely]]
 		{
 			for (size_t i = 0; i < data.size() - 1; i++) {
-				NotLast(data[i]);
+				LineInsert_Comma(data[i]);
 			}
-			Last(data[data.size() - 1]);
+			LineInsert_NoFormat(data[data.size() - 1]);
 		}
 		m_file << "};\n";
 	}

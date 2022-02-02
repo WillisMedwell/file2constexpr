@@ -7,12 +7,9 @@
 #include "DirectoryHelper.hpp"
 #include "CmdResponses.hpp"
 
-
 auto GetInfileNames(const CmdResponses::CmdRequirements&) -> std::vector<std::string>;
 auto GetOutfilePath(const CmdResponses::CmdRequirements&) -> std::string;
 auto GenerateHeaderFile(const std::vector<std::string>&, const std::string&, const std::string&) -> void;
-
-
 
 int main(int argc, char* argv[])
 {
